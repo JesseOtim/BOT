@@ -1,44 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
+import user1 from './images/user1.png';
 import "./App.css";
 
 function App() {
   // Define initial state for the username
-  const [setUsername] = useState("");
+ 
 
   // Define steps for the chatbot
   const steps = [
-    //   {
-    //     id: "0",
-    //     message: "Hey Friend!",
-    //     trigger: "1",
-    //   },
-    //   {
-    //     id: "1",
-    //     message: "How can i help you",
-    //     trigger: "getUsername",
-    //   },
-    //   {
-    //     id: "getUsername",
-    //     user: true,
-    //     trigger: "3",
-    //   },
-    //   {
-    //     id: "3",
-    //     message: ({ previousValue }) =>
-    //       `Hi ${previousValue}, how can I help you?`,
-    //     trigger: "4",
-    //   },
-    //   {
-    //     id: "4",
-    //     options: [
-    //       { value: 1, label: "View Courses" },
-    //       { value: 2, label: "Read Articles" },
-    //     ],
-    //     end: true,
-    //   },
-    // ];
+   
 
     {
       id: "welcome",
@@ -234,36 +206,43 @@ function App() {
 
   // Theme for the chatbot
   const theme = {
-    background: "darkgreen",
-    headerBgColor: "orangered",
+    background: "white",
+    headerBgColor: "darkgreen",
     headerFontSize: "20px",
-    botBubbleColor: "#0F3789",
+    botBubbleColor: "darkgreen",
     headerFontColor: "white",
     botFontColor: "white",
-    userBubbleColor: "#FF5733",
-    userFontColor: "white",
+    userBubbleColor: "white",
+    userFontColor: "black",
   };
 
   // Configuration for the chatbot
   const config = {
-    botAvatar: "",
-    floating: true,
+     floating: true,
   };
 
   // Function to handle username submission
-  const handleUsernameSubmit = (value) => {
-    setUsername(value);
-  };
+  
+
+  // // Function to handle end of chatbot conversation
+  // const handleEnd = (params) =&gt; {
+  //   // Add emoji reaction to the message
+  //   params.steps[params.steps.length - 1].message.add_reaction("&lt;:Vip:897596558323908678&gt;");
+  //   // Handle username submission
+  //   handleUsernameSubmit(params.values[0]);
+  // };
+
   return (
     <div className="App">
-      <h1>Welcome to my Circus</h1>
+      <h1>Chatty Bot</h1>
       <ThemeProvider theme={theme}>
         <ChatBot
-          headerTitle="GeekBot"
+          headerTitle="Chatty"
           steps={steps}
           {...config}
+          botAvatar = {user1}
           // Pass the function to handle username submission
-          handleEnd={(params) => handleUsernameSubmit(params.values[0])}
+         
         />
       </ThemeProvider>
     </div>
