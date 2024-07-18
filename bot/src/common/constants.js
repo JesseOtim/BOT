@@ -1,0 +1,1 @@
+export const welcomeText = "Hello! I am Sonia your land eviction assistant. How can I help you today?"
