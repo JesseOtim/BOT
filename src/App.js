@@ -3,7 +3,7 @@ import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
 import user3 from "./images/user3.png";
 import axios from "axios";
-import { theme } from "./common/theme";
+import { theme } from "./common/theme.js";
 import { welcomeText } from "./common/constants.js";
 
 function App() {
