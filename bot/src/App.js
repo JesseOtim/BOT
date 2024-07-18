@@ -3,28 +3,13 @@ import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
 import user2 from './images/user2.png';
 import axios from "axios";
+import { getOpenAIResponse } from "./openaiService";
 import "./App.css";
 
 function App() {
   const [ setChatHistory] = useState([]);
 
-  const sendMessageToExternalAPI = async (message) => {
-    try {
-      const response = await axios.post(
-        "996e08f311dcac7a8d585a71e67e5074b84a7e06",
-        {
-          id: Date.now(),
-          text: message,
-          to: "+256750616369",
-          from: "+256750616369",
-          channel: "2599235",
-        }
-      );
-      console.log("Message sent successfully:", response.data);
-    } catch (error) {
-      console.error("Error sending message:", error);
-    }
-  };
+  
 
   const steps = [
     {
@@ -40,7 +25,7 @@ function App() {
     {
       id: "handle-user-input",
       message: ({ previousValue, steps }) => {
-        sendMessageToExternalAPI(previousValue);
+        getOpenAIResponse(previousValue);
         setChatHistory((prevHistory) => [...prevHistory, previousValue]);
         return "user-input-response";
       },
@@ -69,10 +54,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Chatty Bot</h1>
+      <h1>ChatBot</h1>
       <ThemeProvider theme={theme}>
         <ChatBot
-          headerTitle="Chatty"
+          headerTitle="Chat"
           steps={steps}
           {...config}
           botAvatar={user2}
