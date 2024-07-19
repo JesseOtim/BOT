@@ -39,11 +39,11 @@ function App() {
  );
 }
 
-const FetchResponse = ({ previousValue }) => {
+const FetchResponse = (previousValue) => {
  const [botMessage, setBotMessage] = useState("");
  useEffect(() => {
   const fetchResponse = async () => {
-   const userMessage = previousValue;
+   const userMessage = previousValue.previousStep.value;
    const url = process.env.REACT_APP_SERVER_URL;
    try {
     const response = await axios.post(url, { prompt: userMessage });
