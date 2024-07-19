@@ -33,7 +33,13 @@ function App() {
  return (
   <div className="App">
    <ThemeProvider theme={theme}>
-    <ChatBot headerTitle="Sonia" steps={steps} {...config} botAvatar={user3} />
+    <ChatBot
+     headerTitle="Sonia"
+     steps={steps}
+     {...config}
+     botAvatar={user3}
+     floatingStyle={{ height: 80, width: 80 }}
+    />
    </ThemeProvider>
   </div>
  );
