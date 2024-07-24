@@ -1,7 +1,7 @@
 export const theme = {
     background: "white",
     headerBgColor: "red",
-    headerFontSize: "20px",
+    headerFontSize: "25px",
     botBubbleColor: "red",
     headerFontColor: "white",
     botFontColor: "white",
