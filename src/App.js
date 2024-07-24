@@ -5,6 +5,7 @@ import user3 from "./images/user3.png";
 import axios from "axios";
 import { theme } from "./common/theme.js";
 import { welcomeText } from "./common/constants.js";
+import { StyledChatBotHeaderImage } from "./common/styledComponents.js";
 
 function App() {
  const config = {
@@ -34,10 +35,11 @@ function App() {
   <div className="App">
    <ThemeProvider theme={theme}>
     <ChatBot
-     headerTitle="Sonia"
+     headerTitle={<StyledChatBotHeaderImage src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png" />}
      steps={steps}
      {...config}
      botAvatar={user3}
+     hideUserAvatar={true}
      floatingStyle={{ height: 80, width: 80 }}
     />
    </ThemeProvider>
