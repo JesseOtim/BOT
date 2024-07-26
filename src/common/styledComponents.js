@@ -43,4 +43,7 @@ export const StyledChatBotContainer = styled.div`
   .rsc-content {
     background-color: white !important;
   }
+  .rsc-input {
+    background-color: white !important;
+  }
 `;
