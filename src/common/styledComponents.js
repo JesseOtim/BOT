@@ -38,9 +38,9 @@ export const StyledChatBotHeaderImage = styled.img`
 
 export const StyledChatBotContainer = styled.div`
   .rsc-container {
-    background-color: red !important;
+    background-color: white !important;
   }
   .rsc-content {
-    background-color: red !important;
+    background-color: white !important;
   }
 `;
