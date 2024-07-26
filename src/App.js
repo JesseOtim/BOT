@@ -10,7 +10,8 @@ import {
  StyledChatBotHeader,
  StyledChatBotResponse,
  StyledChatBotMessage,
- StyledChatBotFloatingIcon
+ StyledChatBotFloatingIcon,
+ StyledChatBotContainer
 } from "./common/styledComponents.js";
 import { GlobalStyle } from "./styles.js";
 import { v4 as uuid } from "uuid";
@@ -79,6 +80,7 @@ function App() {
   <div className="App">
    <ThemeProvider theme={theme}>
     <GlobalStyle />
+    <StyledChatBotContainer>
     <ChatBot
      bubbleStyle={{ backgroundColor: "antiquewhite" }}
      headerTitle={
@@ -90,7 +92,6 @@ function App() {
      steps={steps}
      {...config}
      botAvatar={user3}
-     floatingStyle={{ height: 80, width: 80 }}
      placeholder={"Write your message .... 😀"}
      hideUserAvatar={true}
      floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" />}
@@ -106,6 +107,7 @@ function App() {
       <FetchResponse />
      </StyledChatBotHeader>
     </ChatBot>
+    </StyledChatBotContainer>
    </ThemeProvider>
   </div>
  );

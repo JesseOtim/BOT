@@ -35,3 +35,12 @@ export const StyledChatBotHeaderImage = styled.img`
   margin: 10px;
   margin-top: 30px;
 `;
+
+export const StyledChatBotContainer = styled.div`
+  .rsc-container {
+    background-color: red !important;
+  }
+  .rsc-content {
+    background-color: red !important;
+  }
+`;
