@@ -53,9 +53,6 @@ function App() {
 
  const config = {
   floating: true,
-  onClose: () => {
-    window.parent.postMessage('chatbotClosed', '*');
-  }
  };
 
  useEffect(() => {
