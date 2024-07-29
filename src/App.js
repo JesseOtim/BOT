@@ -49,6 +49,8 @@ function App() {
   return storedUserId || uuid();
  });
 
+ const [zIndex, setZIndex] = useState("-1");
+
  const config = {
   floating: true,
  };
@@ -76,11 +78,15 @@ function App() {
   },
  ];
 
+ const handleClick = () => {
+    setZIndex(zIndex==="-1" ? "9999" : "-1");
+ };
+
  return (
-  <div className="App">
+  <div className="App" onClick={handleClick}>
    <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <StyledChatBotContainer>
+    <StyledChatBotContainer style={{zIndex}}>
     <ChatBot
      bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px" }}
      headerTitle={
