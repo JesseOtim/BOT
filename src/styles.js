@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'ABeeZee', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.text};
