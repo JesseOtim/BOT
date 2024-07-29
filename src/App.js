@@ -53,6 +53,9 @@ function App() {
 
  const config = {
   floating: true,
+  onClose: () => {
+    window.parent.postMessage('chatbotClosed', '*');
+  }
  };
 
  useEffect(() => {
@@ -79,7 +82,7 @@ function App() {
  ];
 
  const handleClick = () => {
-    setZIndex(zIndex==="-1" ? "10000" : "-1");
+    setZIndex(zIndex==="-1" ? "9999" : "-1");
  };
 
  return (

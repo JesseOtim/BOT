@@ -47,5 +47,5 @@ export const StyledChatBotContainer = styled.div`
     background-color: white !important;
   }
   position: relative;
-  z-index: ${(props) => props.zIndex || "10000"};
+  z-index: ${(props) => props.zIndex || "9999"};
 `;
