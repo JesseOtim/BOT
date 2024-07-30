@@ -92,7 +92,7 @@ function App() {
        <StyledChatBotHeaderImage
         src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
         alt="Company Logo"
-        onClick={() => toggleChatbot(false)}
+        onClick={() => toggleChatbot(true)}
        />
       }
       steps={steps}
