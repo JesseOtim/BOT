@@ -81,8 +81,9 @@ function App() {
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
  };
 
- const handleClose = () => {
-  toggleChatbot(false);
+ const handleClose = (isOpen) => {
+  console.log(isOpen, ">OOOOOOOOOOO<");
+  toggleChatbot(isOpen);
  };
 
  return (
@@ -105,7 +106,7 @@ function App() {
       hideUserAvatar={true}
       floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)} />}
       width="500px"
-      handleEnd={handleClose}
+      handleEnd={() => handleClose(false)}
      >
       <StyledChatBotHeader>
        {steps.map((step, index) => (
