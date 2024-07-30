@@ -81,14 +81,18 @@ function App() {
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
  };
 
- const handleEnd = ({ values }) => {
-  console.log(false, "VVVVVVVVVV", values);
-  toggleChatbot(false);
- };
-
  const onClose = () => {
     toggleChatbot(false);
    };
+
+   useEffect(() => {
+    const closeButton = document.querySelector(".rsc-header-close-button");
+    if (closeButton) {
+     closeButton.addEventListener("click", () => {
+      toggleChatbot(false);
+     });
+    }
+   }, []);
 
  return (
   <div className="App">
@@ -111,7 +115,6 @@ function App() {
       hideUserAvatar={true}
       floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)} />}
       width="500px"
-      onClose={onClose}
      >
       <StyledChatBotHeader>
        {steps.map((step, index) => (
