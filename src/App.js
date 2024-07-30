@@ -108,7 +108,7 @@ function App() {
       width="500px"
       handleEnd={handleClose}
      >
-      <StyledChatBotHeader>
+      <StyledChatBotHeader onClick={() => handleClose}>
        {steps.map((step, index) => (
         <StyledChatBotMessage key={index}>
          console.log(step.message);
