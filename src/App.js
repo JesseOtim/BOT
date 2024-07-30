@@ -78,21 +78,8 @@ function App() {
 
  const toggleChatbot = (isOpen) => {
   console.log(isOpen, "!!!!!!!!");
-  window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
+  window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen, closed: !isOpen }, "*");
  };
-
- const onClose = () => {
-    toggleChatbot(false);
-   };
-
-   useEffect(() => {
-    const closeButton = document.querySelector(".rsc-header-close-button");
-    if (closeButton) {
-     closeButton.addEventListener("click", () => {
-      toggleChatbot(false);
-     });
-    }
-   }, []);
 
  return (
   <div className="App">
@@ -105,7 +92,6 @@ function App() {
        <StyledChatBotHeaderImage
         src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
         alt="Company Logo"
-        onClick={() => toggleChatbot(false)}
        />
       }
       steps={steps}
