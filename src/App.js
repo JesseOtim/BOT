@@ -78,7 +78,7 @@ function App() {
 
  const toggleChatbot = (isOpen) => {
   console.log(isOpen, "!!!!!!!!");
-  window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen: !isOpen, closed: !isOpen }, "*");
+  window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen, closed: isOpen }, "*");
  };
 
  return (
