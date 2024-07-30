@@ -77,15 +77,13 @@ function App() {
  ];
 
  const toggleChatbot = (isOpen) => {
+  console.log(isOpen, "?????????");
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
-  if (!isOpen) {
-    window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen: false }, "*");
-  }
  };
 
  const handleClose = () => {
-    toggleChatbot(false);
-  };
+  toggleChatbot(false);
+ };
 
  return (
   <div className="App">
@@ -105,7 +103,7 @@ function App() {
       botAvatar={user3}
       placeholder={"Write your message .... 😀"}
       hideUserAvatar={true}
-      floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)}/>}
+      floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)} />}
       width="500px"
       handleEnd={handleClose}
      >
