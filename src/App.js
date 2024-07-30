@@ -11,7 +11,7 @@ import {
  StyledChatBotResponse,
  StyledChatBotMessage,
  StyledChatBotFloatingIcon,
- StyledChatBotContainer
+ StyledChatBotContainer,
 } from "./common/styledComponents.js";
 import { GlobalStyle } from "./styles.js";
 import { v4 as uuid } from "uuid";
@@ -49,8 +49,6 @@ function App() {
   return storedUserId || uuid();
  });
 
- const [zIndex, setZIndex] = useState("-1");
-
  const config = {
   floating: true,
  };
@@ -78,41 +76,41 @@ function App() {
   },
  ];
 
- const handleClick = () => {
-    setZIndex(zIndex==="-1" ? "9999" : "-1");
+ const toggleChatbot = (isOpen) => {
+  window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
  };
 
  return (
-  <div className="App" onClick={handleClick}>
+  <div className="App">
    <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <StyledChatBotContainer style={{zIndex}}>
-    <ChatBot
-     bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px" }}
-     headerTitle={
-      <StyledChatBotHeaderImage
-       src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
-       alt="Company Logo"
-      />
-     }
-     steps={steps}
-     {...config}
-     botAvatar={user3}
-     placeholder={"Write your message .... 😀"}
-     hideUserAvatar={true}
-     floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" />}
-     width="500px"
-    >
-     <StyledChatBotHeader>
-      {steps.map((step, index) => (
-       <StyledChatBotMessage key={index}>
-        console.log(step.message);
-        {step.message}
-       </StyledChatBotMessage>
-      ))}
-      <FetchResponse />
-     </StyledChatBotHeader>
-    </ChatBot>
+    <StyledChatBotContainer>
+     <ChatBot
+      bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px" }}
+      headerTitle={
+       <StyledChatBotHeaderImage
+        src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
+        alt="Company Logo"
+       />
+      }
+      steps={steps}
+      {...config}
+      botAvatar={user3}
+      placeholder={"Write your message .... 😀"}
+      hideUserAvatar={true}
+      floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)}/>}
+      width="500px"
+     >
+      <StyledChatBotHeader>
+       {steps.map((step, index) => (
+        <StyledChatBotMessage key={index}>
+         console.log(step.message);
+         {step.message}
+        </StyledChatBotMessage>
+       ))}
+       <FetchResponse />
+      </StyledChatBotHeader>
+     </ChatBot>
     </StyledChatBotContainer>
    </ThemeProvider>
   </div>
