@@ -77,7 +77,6 @@ function App() {
   ];
 
   const toggleChatbot = (isOpen) => {
-    console.log(isOpen, "!!!!!!!!");
     window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
   };
 
@@ -125,7 +124,6 @@ function App() {
             <StyledChatBotHeader>
               {steps.map((step, index) => (
                 <StyledChatBotMessage key={index}>
-                  console.log(step.message);
                   {step.message}
                 </StyledChatBotMessage>
               ))}
