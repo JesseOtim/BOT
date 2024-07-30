@@ -8,10 +8,6 @@ export const StyledChatBotHeader = styled.div`
 `;
 
 export const StyledChatBotFloatingIcon = styled.img`
- width: 90px;
- height: 90px;
- border-radius: 50%;
- margin: 10px;
  @media (min-width: 769px) {
   width: 80px;
   height: 80px;
@@ -20,6 +16,10 @@ export const StyledChatBotFloatingIcon = styled.img`
   width: 60px;
   height: 60px;
  }
+ width: 90px;
+ height: 90px;
+ border-radius: 50%;
+ margin: 10px;
 `;
 
 export const StyledChatBotMessage = styled.div`
