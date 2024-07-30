@@ -79,9 +79,7 @@ function App() {
  const toggleChatbot = (isOpen) => {
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
   if (!isOpen) {
-    const iframe = document.querySelector('iframe');
-    iframe.style.width = '250px';
-    iframe.style.height = '250px';
+    window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen: false }, "*");
   }
  };
 
