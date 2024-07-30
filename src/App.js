@@ -77,7 +77,7 @@ function App() {
  ];
 
  const toggleChatbot = (isOpen) => {
-  console.log(isOpen, "?????????");
+  console.log(isOpen, "!!!!!!!!");
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
  };
 
@@ -97,6 +97,7 @@ function App() {
        <StyledChatBotHeaderImage
         src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
         alt="Company Logo"
+        onClick={() => toggleChatbot(false)}
        />
       }
       steps={steps}
@@ -108,7 +109,7 @@ function App() {
       width="500px"
       handleEnd={handleClose}
      >
-      <StyledChatBotHeader onClick={() => handleClose}>
+      <StyledChatBotHeader onClick={() => toggleChatbot(false)}>
        {steps.map((step, index) => (
         <StyledChatBotMessage key={index}>
          console.log(step.message);
