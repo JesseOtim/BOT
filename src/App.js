@@ -110,7 +110,7 @@ function App() {
             steps={steps}
             {...config}
             botAvatar={user3}
-            placeholder={"Write your message .... 😀"}
+            placeholder={"Message Witness Radio.... 😀"}
             hideUserAvatar={true}
             floatingIcon={
               <StyledChatBotFloatingIcon

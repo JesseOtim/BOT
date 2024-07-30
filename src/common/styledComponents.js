@@ -12,7 +12,11 @@ export const StyledChatBotFloatingIcon = styled.img`
  height: 90px;
  border-radius: 50%;
  margin: 10px;
- @media only screen and (max-width: 768px) {
+ @media (min-width: 769px) {
+  width: 80px;
+  height: 80px;
+ }
+ @media (max-width: 768px) {
   width: 60px;
   height: 60px;
  }
