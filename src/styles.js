@@ -22,8 +22,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   /* Adjust the chatbot width and height for mobile devices */
   .ChatBot {
-    width: 200px
-    height: 300px;
+    width: 100%;
+    height: 100vh;
   }
 }
 `;
