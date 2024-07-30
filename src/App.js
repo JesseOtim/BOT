@@ -86,6 +86,10 @@ function App() {
   toggleChatbot(false);
  };
 
+ const onClose = () => {
+    toggleChatbot(false);
+   };
+
  return (
   <div className="App">
    <ThemeProvider theme={theme}>
@@ -107,7 +111,7 @@ function App() {
       hideUserAvatar={true}
       floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)} />}
       width="500px"
-      handleEnd={handleEnd}
+      onClose={onClose}
      >
       <StyledChatBotHeader>
        {steps.map((step, index) => (
