@@ -1,7 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
   * {
     box-sizing: border-box;
@@ -15,4 +14,16 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.text};
   }
+  @media only screen and (max-width: 768px) {
+  /* Adjust the chatbot container width and height for mobile devices */
+  .StyledChatBotContainer {
+    width: 100%;
+    height: 100vh;
+  }
+  /* Adjust the chatbot width and height for mobile devices */
+  .ChatBot {
+    width: 100%;
+    height: 100vh;
+  }
+}
 `;
