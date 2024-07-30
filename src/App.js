@@ -78,6 +78,11 @@ function App() {
 
  const toggleChatbot = (isOpen) => {
   window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
+  if (!isOpen) {
+    const iframe = document.querySelector('iframe');
+    iframe.style.width = '250px';
+    iframe.style.height = '250px';
+  }
  };
 
  const handleClose = () => {
@@ -104,7 +109,7 @@ function App() {
       hideUserAvatar={true}
       floatingIcon={<StyledChatBotFloatingIcon src={user1} alt="floaticon-logo" onClick={() => toggleChatbot(true)}/>}
       width="500px"
-      onClose={handleClose}
+      handleEnd={handleClose}
      >
       <StyledChatBotHeader>
        {steps.map((step, index) => (
