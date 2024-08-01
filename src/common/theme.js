@@ -4,6 +4,6 @@ export const theme = {
       secondary: '#fff',
     },
     fonts: {
-      fontfamily: 'Ubuntu',
+      fontfamily: 'monospace',
     },
   };

@@ -100,7 +100,7 @@ function App() {
         <GlobalStyle />
         <StyledChatBotContainer>
           <ChatBot
-            bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px" }}
+            bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px", fontFamily: "monospace" }}
             headerTitle={
               <StyledChatBotHeaderImage
                 src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"

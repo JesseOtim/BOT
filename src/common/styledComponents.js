@@ -8,6 +8,14 @@ export const StyledChatBotHeader = styled.div`
 `;
 
 export const StyledChatBotFloatingIcon = styled.img`
+ @media (min-width: 769px) {
+  width: 80px !important;
+  height: 80px !important;
+ }
+ @media (max-width: 768px) {
+  width: 60px !important;
+  height: 60px !important;
+ }
  width: 90px;
  height: 90px;
  border-radius: 50%;
