@@ -8,35 +8,30 @@ export const StyledChatBotHeader = styled.div`
 `;
 
 export const StyledChatBotFloatingIcon = styled.img`
- /* Mobile screens (portrait and landscape) */
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ margin: 10px;
+
  @media only screen and (max-width: 768px) {
   width: 60px;
   height: 60px;
  }
- /* Laptop screens */
+
  @media only screen and (min-width: 769px) and (max-width: 1280px) {
-  /* Your laptop-specific styles here */
   width: 70px;
   height: 70px;
  }
 
-  /* Larger Laptop screens */
  @media only screen and (min-width: 1280px) and (max-width: 1440px) {
-  /* Your laptop-specific styles here */
   width: 80px;
   height: 80px;
  }
 
- /* Monitor screens */
  @media only screen and (min-width: 1441px)  and (max-width: 2560px) {
-  /* Your monitor-specific styles here */
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
  }
-//  width: 60px;
-//  height: 60px;
- border-radius: 50%;
- margin: 10px;
 `;
 
 export const StyledChatBotMessage = styled.div`
