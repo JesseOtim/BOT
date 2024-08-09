@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'ABeeZee', sans-serif;
     font-size: 16px;
+    background-color: black;
     line-height: 1.5;
     color: ${({ theme }) => theme.colors.text};
   }

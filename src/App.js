@@ -65,10 +65,16 @@ function App() {
       trigger: "user-input",
     },
     {
-      id: "user-input",
-      user: true,
-      trigger: "fetch-response",
-    },
+        id: "user-input",
+        user: true,
+        validator: (value) => {
+          if (value.trim() === "") {
+            return "Please Enter a Message.... 😡";
+          }
+          return true;
+        },
+        trigger: "fetch-response",
+      },
     {
       id: "fetch-response",
       component: <FetchResponse userId={userId} />,
