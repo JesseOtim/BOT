@@ -25,15 +25,16 @@ const FetchResponse = ({ userId, previousStep }) => {
       const url = process.env.REACT_APP_SERVER_URL;
       try {
         const response = await axios.post(url, { prompt: userMessage, userId });
-        const responseText = response.data;
-        const isNumberedList = responseText.match(/^\d+\..*$/gm);
-        if (isNumberedList) {
-          const options = responseText.split("\n");
-          const formattedResponse = options.map((option, index) => <div key={index}>{option}</div>);
-          setBotMessage(formattedResponse);
-        } else {
-          setBotMessage(responseText);
-        }
+        let responseText = response.data;
+        responseText = responseText.replace(/\n/g, "<br/>");
+        responseText = responseText.replace(/\*(.*?)\*/g, (match, group) => {
+          return `<b>${group}</b>`;
+        });
+        const lines = responseText.split("<br/>");
+        const formattedResponse = lines.map((line, index) => (
+          <div key={index} dangerouslySetInnerHTML={{ __html: line }} />
+        ));
+        setBotMessage(formattedResponse);
       } catch (error) {
         setBotMessage("Error occurred. Please try again.");
       }
@@ -100,7 +101,7 @@ function App() {
         <GlobalStyle />
         <StyledChatBotContainer>
           <ChatBot
-            bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px", fontFamily: "monospace" }}
+            bubbleStyle={{ backgroundColor: "antiquewhite", fontSize: "16px", fontFamily: "monospace", maxWidth: "85%" }}
             headerTitle={
               <StyledChatBotHeaderImage
                 src="https://witnessradio.org/wp-content/uploads/witness.fw_-1.png"
