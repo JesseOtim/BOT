@@ -12,7 +12,6 @@ import {
  StyledChatBotMessage,
  StyledChatBotFloatingIcon,
  StyledChatBotContainer,
- StyledFloatingIconWithText
 } from "./common/styledComponents.js";
 import { GlobalStyle } from "./styles.js";
 import { v4 as uuid } from "uuid";
