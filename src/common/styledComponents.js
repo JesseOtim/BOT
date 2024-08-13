@@ -28,7 +28,7 @@ export const StyledChatBotFloatingIcon = styled.img`
   height: 80px;
  }
 
- @media only screen and (min-width: 1441px)  and (max-width: 2560px) {
+ @media only screen and (min-width: 1441px) and (max-width: 2560px) {
   width: 90px;
   height: 90px;
  }
@@ -68,4 +68,9 @@ export const StyledChatBotContainer = styled.div`
  }
  position: relative;
  z-index: ${(props) => props.zIndex || "9999"};
+ .rsc-float-button {
+  width: unset !important;
+  height: unset !important;
+  box-shadow: unset !important;
+ }
 `;

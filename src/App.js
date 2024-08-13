@@ -12,6 +12,7 @@ import {
  StyledChatBotMessage,
  StyledChatBotFloatingIcon,
  StyledChatBotContainer,
+ StyledFloatingIconWithText
 } from "./common/styledComponents.js";
 import { GlobalStyle } from "./styles.js";
 import { v4 as uuid } from "uuid";
@@ -87,6 +88,17 @@ function App() {
     window.parent.postMessage({ type: "TOGGLE_CHATBOT", isOpen }, "*");
   };
 
+  const FloatingIconWithText = () => (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <StyledChatBotFloatingIcon
+        src={user1}
+        alt="visible"
+        onClick={() => toggleChatbot(true)}
+      />
+      <span style={{ fontSize: '15px', color: 'red', marginBottom: '30px', fontStyle: 'bolder', fontFamily: 'monospace', fontWeight: 'bolder' }}>👋🏾 Chat With Us</span>
+    </div>
+  );
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       const closeButton = document.querySelector(".rsc-header-close-button");
@@ -120,11 +132,7 @@ function App() {
             placeholder={"Message Witness Radio.... 😀"}
             hideUserAvatar={true}
             floatingIcon={
-              <StyledChatBotFloatingIcon
-                src={user1}
-                alt="visible"
-                onClick={() => toggleChatbot(true)}
-              />
+              <FloatingIconWithText/>
             }
             width="500px"
           >
