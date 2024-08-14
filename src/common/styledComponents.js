@@ -12,6 +12,7 @@ export const StyledChatBotFloatingIcon = styled.img`
  height: 60px;
  border-radius: 50%;
  margin: 10px;
+ pointer-events: all;
 
  @media only screen and (max-width: 768px) {
   width: 60px;
@@ -49,11 +50,10 @@ export const StyledChatBotResponse = styled.div`
 `;
 
 export const StyledChatBotHeaderImage = styled.img`
- width: 70px;
  height: 45px;
- border-radius: 50%;
  margin: 10px;
  margin-top: 30px;
+ objectFit: "contain";
 `;
 
 export const StyledChatBotContainer = styled.div`
@@ -72,5 +72,6 @@ export const StyledChatBotContainer = styled.div`
   width: unset !important;
   height: unset !important;
   box-shadow: unset !important;
+  pointer-events: none;
  }
 `;
